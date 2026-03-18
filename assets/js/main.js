@@ -2,6 +2,29 @@
 // abrahamsatlaw.com
 
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+// WhatsApp Click Handler with Mobile Detection
+function handleWhatsApp(event) {
+  event.preventDefault();
+  const phoneNumber = '19052502220';
+  const message = 'Hello Abrahams Law, I would like to inquire about your legal services';
+  
+  // Detect device type
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isMobile = isAndroid || isIOS;
+  
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  
+  if (isMobile) {
+    // Mobile: Direct app open
+    window.location.href = whatsappUrl;
+  } else {
+    // Desktop: Open in new tab
+    window.open(whatsappUrl, '_blank');
+  }
+}
+
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 30), {passive: true});
     let open = false;

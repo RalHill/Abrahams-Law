@@ -49,7 +49,8 @@
     .hbg{display:none;background:none;border:none;cursor:pointer;padding:.4rem;color:var(--t1)}
     .mnav{display:none;position:fixed;top:0;right:0;bottom:0;width:300px;background:var(--ink2);border-left:1px solid var(--b);z-index:1500;padding:2rem 1.5rem;flex-direction:column;transform:translateX(100%);transition:transform .35s var(--ease)}
     .mnav.op{transform:translateX(0)}
-    .mov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1400;opacity:0;transition:opacity .3s}
+    .mov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1400;opacity:0;transition:opacity .3s;pointer-events:none}
+    .mov.op{pointer-events:auto}
     .mov.op{opacity:1}
     @media(max-width:960px){nav{padding:0 1.5rem}.nlinks,.ntel{display:none}.hbg{display:block}.mnav,.mov{display:flex}}
 
@@ -245,7 +246,7 @@
     .fleg a:hover{color:var(--gold)}
 
     /* STICKY MOB */
-    .mcta{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(9,11,15,.95);backdrop-filter:blur(20px);border-top:1px solid var(--b);padding:.75rem 1rem;gap:.75rem;z-index:500}
+    .mcta{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(9,11,15,.95);backdrop-filter:blur(20px);border-top:1px solid var(--b);padding:.75rem 1rem;gap:.75rem;z-index:1401}
     .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:.7rem;border-radius:var(--r);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
     .mcc{background:var(--gold);color:var(--ink)}
     .mcw{background:#1FAB47;color:var(--white)}
@@ -259,6 +260,12 @@
 
     @media(max-width:960px){.hinn{grid-template-columns:1fr;padding:5rem 1.5rem 3rem}.hpanel{max-width:480px}.sec{padding:5rem 1.5rem}.ts{padding:1.5rem}.ctab{padding:4rem 1.5rem}footer{padding:3rem 1.5rem 2rem}}
     @media(max-width:600px){.sec{padding:4rem 1.25rem}.hst{gap:1.5rem;flex-wrap:wrap}}
+
+    /* Bank Logos Carousel */
+    .carousel-container{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;width:100%}
+    .carousel-logos{display:flex;gap:1.5rem;padding:1rem 0;min-width:min-content}
+    @media(min-width:768px){.carousel-container{overflow-x:visible}.carousel-logos{flex-wrap:wrap;justify-content:center;min-width:auto}}
+    @media(max-width:767px){.carousel-container{margin:0 -1.5rem;padding:0 1.5rem}.carousel-logos{min-width:calc(100vw - 3rem)}}
 
     .iw{display:flex;align-items:center;justify-content:center;padding:.75rem 1.25rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;transition:transform .2s,background .2s,box-shadow .2s;cursor:default}
     .iw:hover{transform:translateY(-3px);background:rgba(255,255,255,0.08);box-shadow:0 10px 28px rgba(0,0,0,.45)}
